@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is the third activity"
+        android:textSize="24sp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Return with message"
+        android:textAllCaps="false"
+        android:id="@+id/button_return"/>
+    
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:src="@drawable/b"
+        android:id="@+id/imageViewTest"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change View"
+        android:textAllCaps="false"
+        android:id="@+id/button_change_image"/>
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBarTest"
+        android:max="100"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change progressBar"
+        android:textAllCaps="false"
+        android:id="@+id/button_change_progressBar"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add progressBar"
+        android:textAllCaps="false"
+        android:id="@+id/button_add_progressBar"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AlertDialog"
+        android:textAllCaps="false"
+        android:id="@+id/button_alertDialog"/>
+
+</LinearLayout>
