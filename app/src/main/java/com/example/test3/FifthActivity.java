@@ -1,45 +1,40 @@
 package com.example.test3;
 
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class FifthActivity extends AppCompatActivity {
-
-    private static final int[] iconArray = {
-            R.drawable.b, R.drawable.b, R.drawable.b, R.drawable.b,
-            R.drawable.b
-    };
-
-    private static final String[] nameArray={
-         "Apple","Banana","Orange","Watermelon","Pear"
-    };
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fifth);
-        List<Map<String,Object>> list = new ArrayList<>();
-        for (int i = 0;i < iconArray.length;i++){
-            Map<String,Object> item = new HashMap<>();
-            item.put("icon",iconArray[i]);
-            item.put("name",nameArray[i]);
-            list.add(item);
+
+        List<Bean> data = new ArrayList<>();
+
+        for (int i = 0 ;i < 100 ;i++){
+            Bean bean = new Bean();
+            bean.setName("test"+i);
+            data.add(bean);
         }
-        SimpleAdapter adapter = new SimpleAdapter(this,list,R.layout.fruit_item,new String[]{"icon","name"},new int[]{R.id.fruitImage,R.id.fruitText});
+
         ListView view = findViewById(R.id.listViewAct5);
-        view.setAdapter(adapter);
+        view.setAdapter(new BeanAdapter(data,this));
+
+        view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.d("item","You just touch "+ i);
+            }
+        });
     }
-
-
 }
 

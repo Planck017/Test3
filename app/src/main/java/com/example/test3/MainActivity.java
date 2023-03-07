@@ -42,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
         b6.setOnClickListener(view -> {Intent intent = new Intent(this,FifthActivity.class);
             startActivity(intent);});
 
-
+        Button b7 = findViewById(R.id.button7);
+        b7.setOnClickListener(view -> {Intent intent = new Intent(this,SixthActivity.class);
+            startActivity(intent);});
 
     }
 
